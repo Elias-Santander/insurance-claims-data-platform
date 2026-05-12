@@ -4,3 +4,4 @@ __pycache__/
 .env
 .airflow
 postgres_data/
+logs/*.log
