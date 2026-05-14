@@ -17,3 +17,9 @@ great_expectations/uncommitted/
 
 # PostgreSQL local volume
 postgres_data/
+
+# dbt
+dbt_packages/
+dbt/insurance_claims_dbt
+dbt/insurance_claims_dbt/target/
+logs/

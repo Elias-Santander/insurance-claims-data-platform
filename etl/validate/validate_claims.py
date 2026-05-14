@@ -1,7 +1,5 @@
 import great_expectations as gx
-
 from etl.utils.logger import logger
-
 
 def validate_claims(df):
 
@@ -26,11 +24,9 @@ def validate_claims(df):
     # ==================================================
 
     validations.append(
-
         gx_df.expect_column_values_to_not_be_null(
             "claim_id"
         )
-
     )
 
     # ==================================================
@@ -38,11 +34,9 @@ def validate_claims(df):
     # ==================================================
 
     validations.append(
-
         gx_df.expect_column_values_to_be_unique(
             "claim_id"
         )
-
     )
 
     # ==================================================
@@ -50,17 +44,11 @@ def validate_claims(df):
     # ==================================================
 
     validations.append(
-
         gx_df.expect_column_values_to_be_between(
-
             "claim_amount",
-
             min_value=1,
-
             max_value=100000
-
         )
-
     )
 
     # ==================================================
@@ -68,11 +56,8 @@ def validate_claims(df):
     # ==================================================
 
     validations.append(
-
         gx_df.expect_column_values_to_be_in_set(
-
             "claim_status",
-
             [
                 "OPEN",
                 "IN_REVIEW",
@@ -80,9 +65,7 @@ def validate_claims(df):
                 "REJECTED",
                 "CLOSED"
             ]
-
         )
-
     )
 
     # ==================================================
@@ -90,11 +73,8 @@ def validate_claims(df):
     # ==================================================
 
     validations.append(
-
         gx_df.expect_column_values_to_be_in_set(
-
             "incident_type",
-
             [
                 "COLLISION",
                 "THEFT",
@@ -103,9 +83,7 @@ def validate_claims(df):
                 "FIRE",
                 "VANDALISM"
             ]
-
         )
-
     )
 
     # ==================================================
@@ -113,11 +91,9 @@ def validate_claims(df):
     # ==================================================
 
     validations.append(
-
         gx_df.expect_column_values_to_not_be_null(
             "claim_date"
         )
-
     )
 
     # ==================================================
@@ -125,11 +101,9 @@ def validate_claims(df):
     # ==================================================
 
     validations.append(
-
         gx_df.expect_column_values_to_not_be_null(
             "fraud_flag"
         )
-
     )
 
     # ==================================================
@@ -137,13 +111,9 @@ def validate_claims(df):
     # ==================================================
 
     failed_validations = [
-
         validation
-
         for validation in validations
-
         if validation["success"] is False
-
     ]
 
     # ==================================================
@@ -151,16 +121,12 @@ def validate_claims(df):
     # ==================================================
 
     validation_results = {
-
         "total_validations":
             len(validations),
-
         "failed_validations":
             len(failed_validations),
-
         "success":
             len(failed_validations) == 0
-
     }
 
     logger.info(validation_results)
@@ -170,16 +136,13 @@ def validate_claims(df):
     # ==================================================
 
     if failed_validations:
-
         logger.error(
             f"Validation failed: "
             f"{len(failed_validations)} checks failed"
         )
-
         for failure in failed_validations:
 
             logger.error(failure)
-
         raise Exception(
             "Data validation failed"
         )

@@ -1,17 +1,13 @@
 from etl.extract.extract_csv import extract_csv
-
 from etl.transform.transform_claims import (
     transform_claims
 )
-
 from etl.validate.validate_claims import (
     validate_claims
 )
-
 from etl.load.load_postgres import (
     load_to_postgres
 )
-
 from etl.utils.logger import logger
 
 
@@ -48,11 +44,8 @@ def run_claims_pipeline():
     # ==========================================
 
     load_to_postgres(
-
         claims_df,
-
         "claims_raw"
-
     )
 
     logger.info(
@@ -61,5 +54,4 @@ def run_claims_pipeline():
 
 
 if __name__ == "__main__":
-
     run_claims_pipeline()
