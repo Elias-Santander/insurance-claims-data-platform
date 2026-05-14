@@ -1,7 +1,19 @@
+# Python
 venv/
 __pycache__/
 *.pyc
+
+# Environment
 .env
-.airflow
-postgres_data/
+
+# Logs
 logs/*.log
+
+# Airflow
+.airflow/
+
+# Great Expectations
+great_expectations/uncommitted/
+
+# PostgreSQL local volume
+postgres_data/
