@@ -11,6 +11,8 @@ logs/*.log
 
 # Airflow
 .airflow/
+airflow/logs/
+airflow/plugins/
 
 # Great Expectations
 great_expectations/uncommitted/
