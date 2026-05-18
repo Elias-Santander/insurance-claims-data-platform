@@ -18,3 +18,4 @@ Build an end-to-end data platform for insurance claims analytics.
 
 ## Dashboard Preview
 
+![CI Pipeline](https://github.com/USER/REPO/actions/workflows/ci_pipeline.yml/badge.svg)

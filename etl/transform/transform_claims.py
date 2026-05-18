@@ -41,6 +41,10 @@ def transform_claims(df):
         df["claim_status"]
         .str.upper()
     )
+    df["incident_type"] = (
+        df["incident_type"]
+        .str.upper()
+    )
 
     # ==========================
     # Convert claim_date

@@ -28,3 +28,10 @@ logs/
 
 # Power BI
 *.pbix
+
+# Pytest
+.pytest_cache/
+
+# Coverage
+.coverage
+htmlcov/
