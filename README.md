@@ -15,3 +15,6 @@ Modern data engineering project for insurance claims processing.
 ## Objective
 
 Build an end-to-end data platform for insurance claims analytics.
+
+## Dashboard Preview
+

@@ -25,3 +25,6 @@ dbt_packages/
 dbt/insurance_claims_dbt
 dbt/insurance_claims_dbt/target/
 logs/
+
+# Power BI
+*.pbix

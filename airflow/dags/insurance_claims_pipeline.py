@@ -26,7 +26,7 @@ with DAG(
 
     run_etl = BashOperator(
         task_id="run_etl",
-        bash_command="cd /opt/airflow && python -m etl.main"
+        bash_command="cd /opt/airflow && python -m etl.main",
         sla=timedelta(minutes=10)
     )
 
